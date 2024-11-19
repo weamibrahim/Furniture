@@ -6,7 +6,7 @@ django-cors-headers==4.6.0
 djangorestframework==3.15.2
 gunicorn==23.0.0
 packaging==24.2
-psycopg3==3.2.3   # or psycopg2==2.9.10 if you prefer psycopg2
+psycopg==3.2.3  # Use psycopg instead of psycopg3
 python-decouple==3.8
 python-dotenv==1.0.1
 six==1.16.0
