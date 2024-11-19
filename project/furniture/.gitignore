@@ -15,7 +15,6 @@ env/
 db.sqlite3
 
 # Ignore Django secret key (if you don't want to store it in your settings.py)
-furniture/settings.py
 
 # Ignore log files
 *.log
