@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card text-center p-4 shadow" style="max-width: 400px; width: 100%;">
+    <img src="{{product.image}}" class="card-img-top" alt="...">
+    
+    <h1 class="card-title">{{ product.name }}</h1>
+    <p class="card-text">{{ product.description }}</p>
+    <p class="card-text">Price: <strong>{{ product.price | currency }}</strong></p>
+  </div>
+</div>
+

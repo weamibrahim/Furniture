@@ -1,0 +1,68 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card shadow-lg border-0">
+        <div class="card-body p-5">
+          <h3 class="text-center mb-4">Update Product</h3>
+          <form (ngSubmit)="updateProduct()" enctype="multipart/form-data">
+            <!-- Name Field -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                id="name"
+                type="text"
+                class="form-control"
+                [(ngModel)]="product.name"
+                name="name"
+                placeholder="Enter product name"
+                required
+              />
+            </div>
+            <!-- Price Field -->
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input
+                id="price"
+                type="number"
+                class="form-control"
+                [(ngModel)]="product.price"
+                name="price"
+                placeholder="Enter product price"
+                required
+              />
+            </div>
+            <!-- Description Field -->
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea
+                id="description"
+                class="form-control"
+                [(ngModel)]="product.description"
+                name="description"
+                placeholder="Enter product description"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <!-- Image Upload -->
+            <div class="mb-3">
+              <label for="image" class="form-label">Image</label>
+              <input
+                type="file"
+                id="image"
+                class="form-control"
+                (change)="onFileChange($event)"
+              />
+            </div>
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <!-- Brand Name -->
+    <a class="navbar-brand text-white" href="#">Modern Furniture</a>
+
+    <!-- Toggle Button for Mobile View -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!-- Products Link -->
+        <li
+          class="nav-item"
+          *ngIf="!isAdmin && isAuthenticated || !isAuthenticated"
+        >
+          <a routerLink="products" class="nav-link text-white">Products</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin && isAuthenticated">
+          <a routerLink="products-for-admin" class="nav-link text-white"
+            >Products</a
+          >
+        </li>
+
+        <!-- Profile Link -->
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a routerLink="update-profile" class="nav-link text-white">Profile</a>
+        </li>
+
+        <!-- Logout -->
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <div class="nav-link text-white" (click)="logout()">Logout</div>
+        </li>
+
+        <!-- Login/Register -->
+        <li class="nav-item" *ngIf="!isAuthenticated">
+          <a routerLink="login" class="nav-link text-white">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!isAuthenticated">
+          <a routerLink="register" class="nav-link text-white">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

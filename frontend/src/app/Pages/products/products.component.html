@@ -1,0 +1,29 @@
+<div class="container my-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let product of products">
+      <div class="card h-100">
+        <img src="{{product.image}}" class="card-img-top p-4" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.price}}</p>
+          <div class="d-flex justify-content-center btn btn-info" >
+            <a routerLink="/product/{{product.id}}" class="text-white">Details</a>
+           </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="d-flex justify-content-between mt-4">
+    <button
+      class="btn btn-primary"
+      [disabled]="!previousPage"
+      (click)="previousPageHandler()">Previous</button>
+    <button
+      class="btn btn-primary"
+      [disabled]="!nextPage"
+      (click)="nextPageHandler()">Next</button>
+  </div>
+</div>

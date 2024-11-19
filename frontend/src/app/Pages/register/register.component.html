@@ -1,0 +1,61 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card shadow-lg border-0">
+        <div class="card-body p-5">
+          <!-- Form Header -->
+          <h3 class="text-center mb-4">Register</h3>
+          <form (ngSubmit)="onSubmit()">
+            <!-- Username Field -->
+            <div class="mb-3">
+              <label for="exampleInputname" class="form-label">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputname"
+                [(ngModel)]="username"
+                name="username"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+            <!-- Email Field -->
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email Address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                [(ngModel)]="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <!-- Password Field -->
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                [(ngModel)]="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Additional Links -->
+      <div class="text-center mt-3">
+        <a routerLink="/login" class="text-decoration-none">Already have an account? Login here</a>
+      </div>
+    </div>
+  </div>
+</div>
