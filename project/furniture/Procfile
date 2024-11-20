@@ -1,1 +1,1 @@
-web: gunicorn furniture.wsgi:application --log-file -
+gunicorn furniture.wsgi:application --bind 0.0.0.0:8080
