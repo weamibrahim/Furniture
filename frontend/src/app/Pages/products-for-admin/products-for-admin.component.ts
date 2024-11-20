@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/Services/products.service';
 @Component({
-  selector: 'app-products-for-admin',
-  templateUrl: './products-for-admin.component.html',
-  styleUrls: ['./products-for-admin.component.css'],
+    selector: 'app-products-for-admin',
+    templateUrl: './products-for-admin.component.html',
+    styleUrls: ['./products-for-admin.component.css'],
+    standalone: false
 })
 export class ProductsForAdminComponent implements OnInit {
   constructor(private productsService: ProductsService) {}

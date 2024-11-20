@@ -3,9 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
-  selector: 'app-product-details',
-  templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css']
+    selector: 'app-product-details',
+    templateUrl: './product-details.component.html',
+    styleUrls: ['./product-details.component.css'],
+    standalone: false
 })
 export class ProductDetailsComponent implements OnInit {
 

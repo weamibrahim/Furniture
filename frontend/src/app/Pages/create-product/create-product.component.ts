@@ -3,9 +3,10 @@ import { ProductsService } from 'src/app/Services/products.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-create-product',
-  templateUrl: './create-product.component.html',
-  styleUrls: ['./create-product.component.css']
+    selector: 'app-create-product',
+    templateUrl: './create-product.component.html',
+    styleUrls: ['./create-product.component.css'],
+    standalone: false
 })
 export class CreateProductComponent {
 

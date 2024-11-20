@@ -4,9 +4,10 @@ import { ProductsService } from 'src/app/Services/products.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-update-product',
-  templateUrl: './update-product.component.html',
-  styleUrls: ['./update-product.component.css']
+    selector: 'app-update-product',
+    templateUrl: './update-product.component.html',
+    styleUrls: ['./update-product.component.css'],
+    standalone: false
 })
 export class UpdateProductComponent implements OnInit {
   productId: number | undefined;

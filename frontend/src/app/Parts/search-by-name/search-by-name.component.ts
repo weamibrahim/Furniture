@@ -2,9 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
-  selector: 'app-search-by-name',
-  templateUrl: './search-by-name.component.html',
-  styleUrls: ['./search-by-name.component.css']
+    selector: 'app-search-by-name',
+    templateUrl: './search-by-name.component.html',
+    styleUrls: ['./search-by-name.component.css'],
+    standalone: false
 })
 export class SearchByNameComponent {
   name = ''; // Input for the search query

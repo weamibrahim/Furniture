@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
-  selector: 'app-update-profile',
-  templateUrl: './update-profile.component.html',
-  styleUrls: ['./update-profile.component.css']
+    selector: 'app-update-profile',
+    templateUrl: './update-profile.component.html',
+    styleUrls: ['./update-profile.component.css'],
+    standalone: false
 })
 export class UpdateProfileComponent {
 

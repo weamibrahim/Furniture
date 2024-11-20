@@ -1,9 +1,10 @@
 import { Component ,Output,EventEmitter} from '@angular/core';
 import { ProductsService } from 'src/app/Services/products.service';
 @Component({
-  selector: 'app-search-by-category',
-  templateUrl: './search-by-category.component.html',
-  styleUrls: ['./search-by-category.component.css']
+    selector: 'app-search-by-category',
+    templateUrl: './search-by-category.component.html',
+    styleUrls: ['./search-by-category.component.css'],
+    standalone: false
 })
 export class SearchByCategoryComponent  {
 
