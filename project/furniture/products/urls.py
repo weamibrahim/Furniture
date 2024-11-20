@@ -9,7 +9,8 @@ urlpatterns = [
     path('products/create/', views.createProduct, name='createProduct'),
     path('products/update/<int:id>/', views.updateProduct, name='updateProduct'),
     path('products/delete/<int:id>/', views.deleteProduct, name='deleteProduct'),
-    
+    path('productsByName/', views.searchProductByName, name='searchProducts'),
+    path('productsByCategory/', views.searchByCategory, name='searchByCategory')
 #  use generics
 # #  path('products/list/', views.ProductListCreateView.as_view(), name='product_list'),
 #  path('products/list/<int:id>/', views.ProductRetrieveUpdateDestroyView.as_view(), name='product_detail'),

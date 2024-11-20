@@ -10,3 +10,4 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     created_at = models.DateTimeField(default=timezone.now)
     image = CloudinaryField('image', blank=True, null=True)  
+    category = models.CharField(max_length=255,null=True,blank=True)

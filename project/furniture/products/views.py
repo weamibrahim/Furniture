@@ -101,19 +101,30 @@ def deleteProduct(request, id):
     return Response("Product deleted")
 
                        ######################################################################### 
-def searchProduct(request):
+@api_view(['GET'])
+def searchProductByName(request):
     if request.method == 'GET':
-        query = request.GET.get('query')
+        query = request.GET.get('name', '').strip()
+        print(query)
         products = Product.objects.filter(name__icontains=query)
+        print(products)
+        if not products:
+            return Response("Product not found", status=status.HTTP_404_NOT_FOUND)
+        serializer = ProductSerializer(products, many=True)
+        print(serializer.data) 
+        return Response(serializer.data)
+    
+@api_view(['GET'])    
+def searchByCategory(request): 
+    if request.method == 'GET':
+        query = request.GET.get('category')
+        products = Product.objects.filter(category__icontains=query)
         if not products:
             return Response("Product not found", status=status.HTTP_404_NOT_FOUND)
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
     
-    
-    
-    
-    
+   
     
     
 ######################################################################################################################### 

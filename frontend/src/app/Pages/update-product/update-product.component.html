@@ -5,6 +5,16 @@
         <div class="card-body p-5">
           <h3 class="text-center mb-4">Update Product</h3>
           <form (ngSubmit)="updateProduct()" enctype="multipart/form-data">
+            <!-- Image Upload -->
+            <div class="mb-3">
+              <label for="image" class="form-label">Image</label>
+              <input
+                type="file"
+                id="image"
+                class="form-control"
+                (change)="onFileChange($event)"
+              />
+            </div>
             <!-- Name Field -->
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
@@ -44,15 +54,21 @@
                 required
               ></textarea>
             </div>
-            <!-- Image Upload -->
-            <div class="mb-3">
-              <label for="image" class="form-label">Image</label>
-              <input
-                type="file"
-                id="image"
-                class="form-control"
-                (change)="onFileChange($event)"
-              />
+            <!-- category -->
+            <div>
+              <label for="category" class="form-label">Category</label>
+             <select
+                id="category"
+                class="form-select"
+                [(ngModel)]="product.category"
+                name="category"
+                required
+              >
+                <option value="" disabled>Select a category</option>
+                <option *ngFor="let category of categories" [value]="category">
+                  {{ category }}
+                </option>
+              </select>
             </div>
             <!-- Submit Button -->
             <div class="d-grid">

@@ -64,4 +64,13 @@ export class ProductsService {
         }})
 
   }
+
+
+  searchByName(name: string): Observable<any> {
+    return this.http.get(`http://localhost:8000/productsByName/?name=${name}`)
+  }
+
+  searchByCategory(category: string): Observable<any> {
+    return this.http.get(`http://localhost:8000/productsByCategory/?category=${category}`)
+  }
 }

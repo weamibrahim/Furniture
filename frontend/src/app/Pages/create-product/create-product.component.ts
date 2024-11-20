@@ -14,8 +14,10 @@ product = {
     name: '',
     price: '',
 image: '',
-    description: ''
+    description: '',
+    category:''
   }
+  categories = ['Living Room', 'Bedroom', 'Office', 'Outdoor', 'Dining', 'Decor'];
   constructor (private productsService: ProductsService,private router: Router){}
 
   onImageChange(event: any): void {
@@ -28,6 +30,7 @@ image: '',
     formData.append('name', this.product.name);
     formData.append('price', this.product.price);
     formData.append('description', this.product.description);
+    formData.append('category',this.product.category);
     if (this.product.image) {
       formData.append('image', this.product.image);  // Make sure the image is a file object
   }
@@ -35,7 +38,7 @@ image: '',
     this.productsService.createProduct(formData).subscribe({
       next: (response) => {
         console.log('Product created successfully:', response);
-       
+
         this.router.navigate(['/products-for-admin']);
       },
       error: (error) => {

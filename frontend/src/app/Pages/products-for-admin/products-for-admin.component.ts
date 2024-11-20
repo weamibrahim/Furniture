@@ -9,12 +9,21 @@ export class ProductsForAdminComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   products: any[] = [];
+
   nextPage: string | null = null;
   previousPage: string | null = null;
   ngOnInit(): void {
 this.fetchProducts();
 
   }
+
+  handleSearchResults(searchResults: any[]): void {
+  if(searchResults.length>0){
+    this.products = searchResults;
+  }else{
+    this.fetchProducts();
+  }
+}
 
   fetchProducts(url: string | null = null): void {
     console.log('Fetching products...',url);

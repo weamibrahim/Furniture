@@ -1,17 +1,23 @@
-<div class="container my-4">
-<div class="d-flex justify-content-center my-3"><button class="btn btn-success" ><a routerLink="/create-product" class="text-white">create product</a></button></div>
+<div class="container-fluid my-4">
+  <div class="d-flex justify-content-between my-3">
+    <!-- Search Component -->
+    <app-search-by-name (searchResults)="handleSearchResults($event)"></app-search-by-name>
+
+    <button  >
+      <a routerLink="/create-product" class="text-white">Create</a>
+    </button>
+  </div>
   <div class="row justify-content-center">
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-10 col-lg-8 table-responsive">
       <!-- Table displaying product data -->
-      <table class="table table-bordered table-responsive">
+      <table class="table table-bordered ">
         <thead class="thead-dark">
           <tr>
-            <th>image</th>
+            <th>Image</th>
             <th>Name</th>
             <th>Price</th>
-            <th>Description</th>
-            <th> actions</th>
-
+            <th>Category</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -19,32 +25,22 @@
             <td><img [src]="product.image" alt="Product Image" width="100" height="100" class="rounded"></td>
             <td>{{ product.name }}</td>
             <td>{{ product.price | currency }}</td>
-            <td>{{ product.description }}</td>
+            <td>{{ product.category }}</td>
             <td>
               <button class="btn btn-danger me-4" (click)="deleteProduct(product.id)">Delete</button>
               <button class="btn btn-info">
                 <a routerLink="/update-product/{{product.id}}" class="text-white">Update</a>
               </button>
-
             </td>
-
           </tr>
         </tbody>
       </table>
 
       <!-- Pagination Controls -->
-      <div class="d-flex justify-content-between">
-        <button
-          class="btn btn-primary"
-          [disabled]="!previousPage"
-          (click)="previousPageHandler()">Previous</button>
-        <button
-          class="btn btn-primary"
-          [disabled]="!nextPage"
-          (click)="nextPageHandler()">Next</button>
+      <div class="d-flex justify-content-between mt-3">
+        <button class="btn btn-primary" [disabled]="!previousPage" (click)="previousPageHandler()">Previous</button>
+        <button class="btn btn-primary" [disabled]="!nextPage" (click)="nextPageHandler()">Next</button>
       </div>
     </div>
   </div>
 </div>
-
-

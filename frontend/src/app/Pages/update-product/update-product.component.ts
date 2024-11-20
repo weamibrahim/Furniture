@@ -14,9 +14,10 @@ export class UpdateProductComponent implements OnInit {
     name: '',
     price: '',
     description: '',
+    category: '',
     image: null // Add this to store the image file
   };
-
+  categories = ['Living Room', 'Bedroom', 'Office', 'Outdoor', 'Dining', 'Decor'];
   constructor(
     private route: ActivatedRoute,
     private productsService: ProductsService,
@@ -56,6 +57,7 @@ export class UpdateProductComponent implements OnInit {
       formData.append('name', this.product.name);
       formData.append('price', this.product.price);
       formData.append('description', this.product.description);
+      formData.append('category', this.product.category);
 
       // If there's a new image, append it to the form data
       if (this.product.image && this.product.image instanceof Blob) {

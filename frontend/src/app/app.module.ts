@@ -25,6 +25,9 @@ import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 import { HomeComponent } from './Pages/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchByNameComponent } from './Parts/search-by-name/search-by-name.component';
+
+import { SearchByCategoryComponent } from './Parts/search-by-category/search-by-category.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { HttpClientModule } from '@angular/common/http';
     UpdateProfileComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    SearchByNameComponent,
+    
+    SearchByCategoryComponent
   ],
   imports: [
     BrowserModule,

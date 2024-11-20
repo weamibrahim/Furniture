@@ -4,24 +4,29 @@ import { ProductsService } from 'src/app/Services/products.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService) {}
 
   products: any[] = [];
   nextPage: string | null = null;
   previousPage: string | null = null;
   ngOnInit(): void {
-this.fetchProducts();
-
+    this.fetchProducts();
   }
 
+  handleSearchResults(searchResults: any[]): void {
+    if (searchResults.length > 0) {
+      this.products = searchResults;
+    } else {
+      this.fetchProducts();
+    }
+  }
   fetchProducts(url: string | null = null): void {
-    console.log('Fetching products...',url);
-    // Use the provided URL or default to the initial endpoint
-    const fetchUrl = url || 'http://localhost:8000/products/'; // Replace with your default URL
+    console.log('Fetching products...', url);
+    
+    const fetchUrl = url || 'http://localhost:8000/products/';
 
     this.productsService.getProducts(fetchUrl).subscribe({
       next: (response) => {
@@ -32,20 +37,19 @@ this.fetchProducts();
       },
       error: (error) => {
         console.error('Error fetching products:', error);
-      }
+      },
     });
   }
 
-
-nextPageHandler(): void {
-  if (this.nextPage) {
-    this.fetchProducts(this.nextPage);
+  nextPageHandler(): void {
+    if (this.nextPage) {
+      this.fetchProducts(this.nextPage);
+    }
   }
-}
 
-previousPageHandler(): void {
-  if (this.previousPage) {
-    this.fetchProducts(this.previousPage);
+  previousPageHandler(): void {
+    if (this.previousPage) {
+      this.fetchProducts(this.previousPage);
+    }
   }
-}
 }
