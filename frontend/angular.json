@@ -24,14 +24,15 @@
               "src/assets"
             ],
             "styles": [
-             
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
-            "browser": "src/main.ts"
+            "browser": "src/main.ts",
+            "baseHref": "/",
+            "deployUrl": "/frontend/"  // في حال كان التطبيق على مسار فرعي
           },
           "configurations": {
             "production": {
