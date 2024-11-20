@@ -17,13 +17,15 @@ export class UpdateProductComponent implements OnInit {
     category: '',
     image: null // Add this to store the image file
   };
-  categories = ['Living Room', 'Bedroom', 'Office', 'Outdoor', 'Dining', 'Decor'];
+  categories = ['Living Room', 'Bedroom', 'Office', 'Outdoor', 'Dining'];
   constructor(
     private route: ActivatedRoute,
     private productsService: ProductsService,
     private router: Router
   ) {}
 
+/*************  ✨ Codeium Command ⭐  *************/
+/******  57d3e6b1-2059-4d2b-8583-a81f10b0cb57  *******/
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.productId = +params['id'];

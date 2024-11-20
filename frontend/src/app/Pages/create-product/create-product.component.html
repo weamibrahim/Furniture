@@ -1,86 +1,83 @@
-<div class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-6">
-      <div class="card shadow-lg border-0">
-        <div class="card-body p-5">
-          <h3 class="text-center mb-4">Create Product</h3>
-          <form (ngSubmit)="createProduct()">
-            <!-- Image Upload -->
-            <div class="mb-3">
-              <label for="image" class="form-label">Image</label>
-              <input
-                id="image"
-                type="file"
-                class="form-control"
-                (change)="onImageChange($event)"
-                name="image"
-                required
-              />
-            </div>
-            <!-- Name Field -->
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input
-                id="name"
-                type="text"
-                class="form-control"
-                [(ngModel)]="product.name"
-                name="name"
-                placeholder="Enter product name"
-                required
-              />
-            </div>
-            <!-- Price Field -->
-            <div class="mb-3">
-              <label for="price" class="form-label">Price</label>
-              <input
-                id="price"
-                type="number"
-                class="form-control"
-                [(ngModel)]="product.price"
-                name="price"
-                placeholder="Enter product price"
-                required
-              />
-            </div>
-            <!-- Description Field -->
-            <div class="mb-3">
-              <label for="description" class="form-label">Description</label>
-              <textarea
-                id="description"
-                class="form-control"
-                [(ngModel)]="product.description"
-                name="description"
-                placeholder="Enter product description"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-            <!-- Category Dropdown -->
-<div class="mb-3">
-  <label for="category" class="form-label">Category</label>
-  <select
-    id="category"
-    class="form-select"
-    [(ngModel)]="product.category"
-    name="category"
-    required
-  >
-    <option value="" disabled>Select a category</option>
-    <option *ngFor="let category of categories" [value]="category">
-      {{ category }}
-    </option>
-  </select>
-</div>
-
-            <!-- Submit Button -->
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary btn-lg">
-                Save Changes
-              </button>
-            </div>
-          </form>
-        </div>
+<div class="container-fluid background">
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card border-0 bg-form w-md-50 my-5">
+      <div class="card-body ">
+        <h3 class="text-center mb-4">Create Product</h3>
+        <form (ngSubmit)="createProduct()" >
+          <!-- Image Upload -->
+          <div class="mb-3">
+            <label for="image" class="form-label text-dark">Image</label>
+            <input
+              id="image"
+              type="file"
+              class="form-control"
+              (change)="onImageChange($event)"
+              name="image"
+              required
+            />
+          </div>
+          <!-- Name Field -->
+          <div class="mb-3">
+            <label for="name" class="form-label text-dark">Name</label>
+            <input
+              id="name"
+              type="text"
+              class="form-control"
+              [(ngModel)]="product.name"
+              name="name"
+              placeholder="Enter product name"
+              required
+            />
+          </div>
+          <!-- Price Field -->
+          <div class="mb-3">
+            <label for="price" class="form-label text-dark">Price</label>
+            <input
+              id="price"
+              type="number"
+              class="form-control"
+              [(ngModel)]="product.price"
+              name="price"
+              placeholder="Enter product price"
+              required
+            />
+          </div>
+          <!-- Description Field -->
+          <div class="mb-3">
+            <label for="description" class="form-label text-dark">Description</label>
+            <textarea
+              id="description"
+              class="form-control"
+              [(ngModel)]="product.description"
+              name="description"
+              placeholder="Enter product description"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <!-- Category Dropdown -->
+          <div class="mb-3">
+            <label for="category" class="form-label text-dark">Category</label>
+            <select
+              id="category"
+              class="form-select"
+              [(ngModel)]="product.category"
+              name="category"
+              required
+            >
+              <option value="" disabled>Select a category</option>
+              <option *ngFor="let category of categories" [value]="category">
+                {{ category }}
+              </option>
+            </select>
+          </div>
+          <!-- Submit Button -->
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">
+              Create
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

@@ -1,16 +1,23 @@
+
+
 <div class="container my-4">
+
+<div class="d-flex justify-content-between align-items-center">
+
   <app-search-by-name (searchResults)="handleSearchResults($event)"></app-search-by-name>
   <app-search-by-category (searchResults)="handleSearchResults($event)"></app-search-by-category>
+
+</div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let product of products">
-      <div class="card h-100">
-        <img src="{{product.image}}" class="card-img-top p-4" alt="...">
+    <div class="col " *ngFor="let product of products ">
+      <div class="card h-100 ">
+        <img src="{{product.image}}" class="card-img-top p-4  " alt="...">
         <div class="card-body text-center">
           <h5 class="card-title">{{product.name}}</h5>
         <p>{{product.category}}</p>
           <p class="card-text">{{product.price}}</p>
           <div class="d-flex justify-content-center btn btn-info" >
-            <a routerLink="/product/{{product.id}}" class="text-white">Details</a>
+            <a routerLink="/product/{{product.id}}" class="text-white text-decoration-none">Details</a>
            </div>
         </div>
 

@@ -1,10 +1,10 @@
 <div class="container-fluid my-4">
-  <div class="d-flex justify-content-between my-3">
+  <div class="d-flex justify-content-evenly align-items-center my-3">
     <!-- Search Component -->
-    <app-search-by-name (searchResults)="handleSearchResults($event)"></app-search-by-name>
+    <app-search-by-name (searchResults)="handleSearchResult($event)"></app-search-by-name>
 
-    <button  >
-      <a routerLink="/create-product" class="text-white">Create</a>
+    <button  class="btn btn-success">
+      <a routerLink="/create-product" class="text-white text-decoration-none">Create</a>
     </button>
   </div>
   <div class="row justify-content-center">
@@ -12,7 +12,7 @@
       <!-- Table displaying product data -->
       <table class="table table-bordered ">
         <thead class="thead-dark">
-          <tr>
+          <tr class="text-center">
             <th>Image</th>
             <th>Name</th>
             <th>Price</th>
@@ -20,16 +20,16 @@
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="text-center">
           <tr *ngFor="let product of products" class="align-middle">
             <td><img [src]="product.image" alt="Product Image" width="100" height="100" class="rounded"></td>
             <td>{{ product.name }}</td>
             <td>{{ product.price | currency }}</td>
             <td>{{ product.category }}</td>
             <td>
-              <button class="btn btn-danger me-4" (click)="deleteProduct(product.id)">Delete</button>
+              <button class="btn btn-danger me-2" (click)="deleteProduct(product.id)">Delete</button>
               <button class="btn btn-info">
-                <a routerLink="/update-product/{{product.id}}" class="text-white">Update</a>
+                <a routerLink="/update-product/{{product.id}}" class="text-white text-decoration-none">Update</a>
               </button>
             </td>
           </tr>

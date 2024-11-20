@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  private apiUrl = 'https://furniture-production-6b23.up.railway.app';
+  constructor(private http: HttpClient) {}
 
-  private apiUrl = 'http://localhost:8000';
-  constructor(private http: HttpClient) { }
-
-  register(userData: { username: string; email: string; password: string }): Observable<any> {
+  register(userData: {
+    username: string;
+    email: string;
+    password: string;
+  }): Observable<any> {
     return this.http.post(`${this.apiUrl}/accounts/register/`, userData);
   }
 
@@ -22,8 +25,8 @@ export class AuthService {
     return this.http.put(`${this.apiUrl}/accounts/update/`, data, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Token ${token}`
-      }
+        Authorization: `Token ${token}`,
+      },
     });
   }
 
@@ -35,16 +38,9 @@ export class AuthService {
     const role = JSON.parse(localStorage.getItem('role') || '{}');
 
     return !!role;
-
-
   }
 
   logout(): Observable<any> {
     return this.http.post(`${this.apiUrl}/accounts/logout/`, {});
   }
-
-
-
-
-
 }

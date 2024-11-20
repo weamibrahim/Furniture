@@ -1,11 +1,27 @@
-<div>
- 
-  <button  class="btn btn-primary" (click)="search('Living Room')">Living Room</button>
-  <button  class="btn btn-primary" (click)="search('Bedroom')">Bedroom</button>
-  <button  class="btn btn-primary" (click)="search('Office')">Office</button>
-  <button  class="btn btn-primary" (click)="search('Dining')">Dining</button>
-
-
-  <button  class="btn btn-primary" (click)="search('Outdoor')">Outdoor</button>
-
+<div class="row row-cols-1 row-cols-md-5 g-2 my-5 justify-content-center">
+  <div class="col d-flex justify-content-center">
+    <button type="button" class="btn btn-outline-success w-75 mx-auto d-flex justify-content-center align-items-center" (click)="search('Living Room')">
+      <i class="fa fa-couch"></i>
+    </button>
+  </div>
+  <div class="col d-flex justify-content-center">
+    <button type="button" class="btn btn-outline-primary w-75 d-flex justify-content-center align-items-center" (click)="search('Bedroom')">
+      <i class="fa fa-bed"></i>
+    </button>
+  </div>
+  <div class="col d-flex justify-content-center">
+    <button type="button" class="btn btn-outline-secondary w-75 d-flex justify-content-center align-items-center" (click)="search('Office')">
+      <i class="fa fa-chair"></i>
+    </button>
+  </div>
+  <div class="col d-flex justify-content-center">
+    <button type="button" class="btn btn-outline-info w-75 d-flex justify-content-center align-items-center" (click)="search('Dining')">
+      <i class="fa fa-utensils"></i>
+    </button>
+  </div>
+  <div class="col d-flex justify-content-center">
+    <button type="button" class="btn btn-outline-danger w-75 d-flex justify-content-center align-items-center" (click)="search('Outdoor')">
+      <i class="fa fa-tree"></i>
+    </button>
+  </div>
 </div>

@@ -17,7 +17,7 @@ image: '',
     description: '',
     category:''
   }
-  categories = ['Living Room', 'Bedroom', 'Office', 'Outdoor', 'Dining', 'Decor'];
+  categories = ['Living Room', 'Bedroom', 'Office', 'Outdoor', 'Dining'];
   constructor (private productsService: ProductsService,private router: Router){}
 
   onImageChange(event: any): void {

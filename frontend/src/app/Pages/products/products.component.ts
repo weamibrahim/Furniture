@@ -25,8 +25,9 @@ export class ProductsComponent implements OnInit {
   }
   fetchProducts(url: string | null = null): void {
     console.log('Fetching products...', url);
-    
-    const fetchUrl = url || 'http://localhost:8000/products/';
+
+    const fetchUrl =
+      url || 'https://furniture-production-6b23.up.railway.app/products/';
 
     this.productsService.getProducts(fetchUrl).subscribe({
       next: (response) => {

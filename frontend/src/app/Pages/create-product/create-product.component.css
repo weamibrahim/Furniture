@@ -1,0 +1,10 @@
+.background{
+
+  background-image: url('https://img.freepik.com/free-photo/modern-comfortable-living-room-with-elegant-decoration-lighting-generated-by-artificial-intelligence_24640-131378.jpg?t=st=1732130183~exp=1732133783~hmac=00b756f413264e2f2c36f94c97644966fdeb452d404d75f22a1635b739889f2d&w=1380');
+  background-size: cover;
+  background-position: center;
+
+}
+.bg-form{
+  background-color: rgba(255, 255, 255, 0.555);
+}
