@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/mdb-angular-ui-kit/assets/scss/mdb.scss",
+             
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],

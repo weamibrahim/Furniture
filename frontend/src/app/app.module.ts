@@ -14,16 +14,11 @@ import { UpdateProfileComponent } from './Pages/update-profile/update-profile.co
 import { HeaderComponent } from './Parts/header/header.component';
 import { FooterComponent } from './Parts/footer/footer.component';
 
-import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
-import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
-import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
-import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
-import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
-import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
-import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
-import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
+
+
 import { HomeComponent } from './Pages/home/home.component';
 import { FormsModule } from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
 import { SearchByNameComponent } from './Parts/search-by-name/search-by-name.component';
 
@@ -44,25 +39,14 @@ import { SearchByCategoryComponent } from './Parts/search-by-category/search-by-
     FooterComponent,
     HomeComponent,
     SearchByNameComponent,
-    
+
     SearchByCategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-
-
-
-    MdbAccordionModule,
-    MdbCarouselModule,
-    MdbCollapseModule,
-    MdbDropdownModule,
-    MdbModalModule,
-    MdbTooltipModule,
-    MdbPopoverModule,
-    MdbRippleModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
