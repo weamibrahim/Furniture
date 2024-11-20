@@ -31,7 +31,7 @@
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
             "browser": "src/main.ts",
-            "baseHref": "/",
+            "baseHref": "/frontend",
             "deployUrl": "/frontend/"  // في حال كان التطبيق على مسار فرعي
           },
           "configurations": {
