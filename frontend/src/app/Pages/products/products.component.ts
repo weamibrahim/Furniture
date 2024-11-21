@@ -27,9 +27,12 @@ export class ProductsComponent implements OnInit {
   fetchProducts(url: string | null = null): void {
     console.log('Fetching products...', url);
 
-    const fetchUrl =
+    let fetchUrl =
       url || 'https://furniture-production-6b23.up.railway.app/products/';
 
+      if (fetchUrl.startsWith('http://')) {
+        fetchUrl = fetchUrl.replace('http://', 'https://');
+      }
     this.productsService.getProducts(fetchUrl).subscribe({
       next: (response) => {
         console.log('Products:', response);

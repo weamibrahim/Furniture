@@ -28,9 +28,12 @@ export class ProductsForAdminComponent implements OnInit {
   fetchProducts(url: string | null = null): void {
     console.log('Fetching products...', url);
     // Use the provided URL or default to the initial endpoint
-    const fetchUrl =
+    let fetchUrl =
       url || 'https://furniture-production-6b23.up.railway.app/products/'; // Replace with your default URL
 
+      if (fetchUrl.startsWith('http://')) {
+        fetchUrl = fetchUrl.replace('http://', 'https://');
+      }
     this.productsService.getProducts(fetchUrl).subscribe({
       next: (response) => {
         console.log('Products:', response);

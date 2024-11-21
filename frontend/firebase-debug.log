@@ -1,0 +1,21 @@
+[debug] [2024-11-21T22:05:01.753Z] ----------------------------------------------------------------------
+[debug] [2024-11-21T22:05:01.756Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Weaam\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-11-21T22:05:01.756Z] CLI Version:   13.26.0
+[debug] [2024-11-21T22:05:01.757Z] Platform:      win32
+[debug] [2024-11-21T22:05:01.757Z] Node Version:  v20.10.0
+[debug] [2024-11-21T22:05:01.757Z] Time:          Fri Nov 22 2024 00:05:01 GMT+0200 (Eastern European Standard Time)
+[debug] [2024-11-21T22:05:01.757Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-21T22:05:01.845Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-21T22:05:01.845Z] > authorizing via signed-in user (weamibrahim099@gmail.com)
+[debug] [2024-11-21T22:05:01.845Z] [iam] checking project furniture-7ba7f for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-11-21T22:05:01.847Z] Checked if tokens are valid: false, expires at: 1732201417219
+[debug] [2024-11-21T22:05:01.847Z] Checked if tokens are valid: false, expires at: 1732201417219
+[debug] [2024-11-21T22:05:01.847Z] > refreshing access token with scopes: []
+[debug] [2024-11-21T22:05:01.849Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-11-21T22:05:01.849Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-11-21T22:05:02.182Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-11-21T22:05:02.183Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-11-21T22:05:02.194Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/furniture-7ba7f:testIamPermissions [none]
+[debug] [2024-11-21T22:05:02.194Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/furniture-7ba7f:testIamPermissions x-goog-quota-user=projects/furniture-7ba7f
+[debug] [2024-11-21T22:05:02.195Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/furniture-7ba7f:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}

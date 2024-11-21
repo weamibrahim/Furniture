@@ -1,5 +1,5 @@
-<div class="container-fluid my-4">
-  <div class="d-flex justify-content-evenly align-items-center my-3">
+<div class="container-fluid  background">
+  <div class="d-flex justify-content-evenly align-items-center py-4">
     <!-- Search Component -->
     <app-search-by-name (searchResults)="handleSearchResult($event)"></app-search-by-name>
 
@@ -7,12 +7,12 @@
       <a routerLink="/create-product" class="text-white text-decoration-none">Create</a>
     </button>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8 table-responsive">
+  <div class="row justify-content-center ">
+    <div class="col-12 col-md-10 col-lg-8 table-responsive ">
       <!-- Table displaying product data -->
-      <table class="table table-bordered ">
-        <thead class="thead-dark">
-          <tr class="text-center">
+      <table class="table table-bordered  ">
+        <thead class="thead-dark ">
+          <tr class="text-center  ">
             <th>Image</th>
             <th>Name</th>
             <th>Price</th>
@@ -37,7 +37,7 @@
       </table>
 
       <!-- Pagination Controls -->
-      <div class="d-flex justify-content-between mt-3">
+      <div class="d-flex justify-content-between my-5">
         <button class="btn btn-primary" [disabled]="!previousPage" (click)="previousPageHandler()">Previous</button>
         <button class="btn btn-primary" [disabled]="!nextPage" (click)="nextPageHandler()">Next</button>
       </div>

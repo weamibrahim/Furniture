@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { AuthService } from 'src/app/Services/auth.service';
 import {  Router } from '@angular/router';
 @Component({
@@ -7,7 +7,7 @@ import {  Router } from '@angular/router';
     styleUrls: ['./header.component.css'],
     standalone: false
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   isAuthenticated: boolean;
   isAdmin: boolean;
   constructor(private authService: AuthService,private router:Router) {
@@ -15,6 +15,13 @@ export class HeaderComponent {
     this.isAuthenticated = this.authService.isAuthenticated();
   }
 
+  ngOnInit() {
+    this.isAuthenticated = !!localStorage.getItem('token');
+
+    this.router.events.subscribe(() => {
+      this.isAuthenticated = !!localStorage.getItem('token');
+    });
+  }
   logout() {
     this.authService.logout();
     this.isAuthenticated = false;

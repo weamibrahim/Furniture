@@ -13,7 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/frontend/browser",
+            "outputPath": "dist/frontend",
+            
 
             "index": "src/index.html",
             "polyfills": [
@@ -31,9 +32,8 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
-            "browser": "src/main.ts",
-            "baseHref": "/",
-               "deployUrl": "/"
+            "browser": "src/main.ts"
+
 
           },
           "configurations": {
@@ -41,7 +41,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "700kb",
                   "maximumError": "1mb"
                 },
                 {

@@ -1,4 +1,4 @@
-<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div class="container-fluid">
     <!-- Brand Name -->
     <a class="navbar-brand text-white" href="#">Modern Furniture</a>
@@ -38,7 +38,7 @@
         </li>
 
         <!-- Logout -->
-        <li class="nav-item" *ngIf="isAuthenticated">
+        <li class="nav-item pe-none" *ngIf="isAuthenticated">
           <div class="nav-link text-white" (click)="logout()">Logout</div>
         </li>
 

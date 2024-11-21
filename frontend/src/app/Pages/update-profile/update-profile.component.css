@@ -1,10 +1,10 @@
 .background{
 
-  background-image: url('https://img.freepik.com/free-photo/beautiful-photorealistic-moon_23-2151026122.jpg?t=st=1732131212~exp=1732134812~hmac=71498141c5949075ee6310e1142b43cce11e3fdb1f485bc06a55ebed8af2cc95&w=1060');
+  background-image: url('../../../assets/bgCreate.jpg');
   background-size: cover;
   background-position: center;
 
 }
 .bg-form{
-  background-color: rgba(255, 255, 255, 0.555);
+  background-color: rgba(255, 255, 255, 0);
 }
