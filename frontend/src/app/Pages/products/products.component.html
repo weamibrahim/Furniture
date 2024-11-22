@@ -8,21 +8,40 @@
   <app-search-by-category (searchResults)="handleSearchResults($event)"></app-search-by-category>
 
 </div>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col " *ngFor="let product of products ">
-      <div class="card h-100 ">
-        <img src="{{product.image}}" class="card-img-top p-4  " alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title">{{product.name}}</h5>
-        <p>{{product.category}}</p>
-          <p class="card-text">{{product.price}}</p>
-          <div class="d-flex justify-content-center btn btn-info" >
-            <a routerLink="/product/{{product.id}}" class="text-white text-decoration-none">Details</a>
-           </div>
-        </div>
+<div *ngIf="loading" class="d-flex justify-content-center align-items-center vh-50">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
 
+  </div>
+  <div class="spinner-border text-danger mx-3" role="status">
+    <span class="visually-hidden">Loading...</span>
+
+  </div>
+  <div class="spinner-border text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+
+  </div>
+</div>
+  <div *ngIf="!loading" class="row row-cols-1 row-cols-md-3 g-4">
+
+    <div
+  class="col"
+  *ngFor="let product of products; let i = index"
+  [ngStyle]="{ animationDelay: i * 0.2 + 's' }"
+  class="fade-in-up">
+  <div class="card h-100">
+    <img src="{{ product.image }}" class="card-img-top p-4" alt="{{ product.name }}">
+    <div class="card-body text-center">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p>{{ product.category }}</p>
+      <p class="card-text">{{ product.price }}</p>
+      <div class="d-flex justify-content-center btn btn-info">
+        <a routerLink="/product/{{ product.id }}" class="text-white text-decoration-none">Details</a>
       </div>
     </div>
+  </div>
+</div>
+
   </div>
 
   <!-- Pagination Controls -->

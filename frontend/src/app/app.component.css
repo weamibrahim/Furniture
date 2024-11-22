@@ -1,0 +1,39 @@
+.bg-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  animation: fadeOut 1s ease-in-out forwards; /* Fades out the loading screen */
+  z-index: 9999;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    background-color: rgb(0, 0, 0); /* Gradual background transition */
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.main-content {
+  animation: fadeIn 1s ease-in; /* Optional fade-in effect for content */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

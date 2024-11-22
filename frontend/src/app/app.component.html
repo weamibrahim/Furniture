@@ -1,3 +1,9 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div *ngIf="isloading" class="bg-loading">
+  <app-loading></app-loading>
+</div>
+
+<div *ngIf="!isloading" class="main-content">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>

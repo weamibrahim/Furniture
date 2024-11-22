@@ -22,7 +22,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchByNameComponent } from './Parts/search-by-name/search-by-name.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchByCategoryComponent } from './Parts/search-by-category/search-by-category.component';
+import { LoadingComponent } from "./Parts/loading/loading.component";
 
 @NgModule({
   declarations: [
@@ -46,8 +48,10 @@ import { SearchByCategoryComponent } from './Parts/search-by-category/search-by-
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    BrowserAnimationsModule,
+    LoadingComponent
+],
   providers: [],
   bootstrap: [AppComponent]
 })

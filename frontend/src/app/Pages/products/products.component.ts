@@ -13,6 +13,7 @@ export class ProductsComponent implements OnInit {
   products: any[] = [];
   nextPage: string | null = null;
   previousPage: string | null = null;
+  loading: boolean = true;
   ngOnInit(): void {
     this.fetchProducts();
   }
@@ -33,15 +34,18 @@ export class ProductsComponent implements OnInit {
       if (fetchUrl.startsWith('http://')) {
         fetchUrl = fetchUrl.replace('http://', 'https://');
       }
+      this
     this.productsService.getProducts(fetchUrl).subscribe({
       next: (response) => {
         console.log('Products:', response);
         this.products = response.results;
         this.nextPage = response.next;
         this.previousPage = response.previous;
+        this.loading = false;
       },
       error: (error) => {
         console.error('Error fetching products:', error);
+        this.loading = false;
       },
     });
   }
