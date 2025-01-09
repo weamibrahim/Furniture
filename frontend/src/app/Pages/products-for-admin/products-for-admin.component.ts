@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/Services/products.service';
 @Component({
-    selector: 'app-products-for-admin',
-    templateUrl: './products-for-admin.component.html',
-    styleUrls: ['./products-for-admin.component.css'],
-    standalone: false
+  selector: 'app-products-for-admin',
+  templateUrl: './products-for-admin.component.html',
+  styleUrls: ['./products-for-admin.component.css'],
+  standalone: false,
 })
 export class ProductsForAdminComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
@@ -29,11 +29,11 @@ export class ProductsForAdminComponent implements OnInit {
     console.log('Fetching products...', url);
     // Use the provided URL or default to the initial endpoint
     let fetchUrl =
-      url || 'https://furniture-production-6b23.up.railway.app/products/'; // Replace with your default URL
+      url || 'https://furniture-production-4fc8.up.railway.app/products/'; // Replace with your default URL
 
-      if (fetchUrl.startsWith('http://')) {
-        fetchUrl = fetchUrl.replace('http://', 'https://');
-      }
+    if (fetchUrl.startsWith('http://')) {
+      fetchUrl = fetchUrl.replace('http://', 'https://');
+    }
     this.productsService.getProducts(fetchUrl).subscribe({
       next: (response) => {
         console.log('Products:', response);

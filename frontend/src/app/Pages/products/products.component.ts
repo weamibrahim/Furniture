@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
-    selector: 'app-products',
-    templateUrl: './products.component.html',
-    styleUrls: ['./products.component.css'],
-    standalone: false
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css'],
+  standalone: false,
 })
 export class ProductsComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
@@ -29,12 +29,12 @@ export class ProductsComponent implements OnInit {
     console.log('Fetching products...', url);
 
     let fetchUrl =
-      url || 'https://furniture-production-6b23.up.railway.app/products/';
+      url || 'https://furniture-production-4fc8.up.railway.app/products/';
 
-      if (fetchUrl.startsWith('http://')) {
-        fetchUrl = fetchUrl.replace('http://', 'https://');
-      }
-      this
+    if (fetchUrl.startsWith('http://')) {
+      fetchUrl = fetchUrl.replace('http://', 'https://');
+    }
+    this;
     this.productsService.getProducts(fetchUrl).subscribe({
       next: (response) => {
         console.log('Products:', response);
