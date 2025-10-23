@@ -29,7 +29,7 @@ export class ProductsComponent implements OnInit {
     console.log('Fetching products...', url);
 
     let fetchUrl =
-      url || 'https://furniture-production-4fc8.up.railway.app/products/';
+      url || 'https://furniture-production-6446.up.railway.app/products/';
 
     if (fetchUrl.startsWith('http://')) {
       fetchUrl = fetchUrl.replace('http://', 'https://');

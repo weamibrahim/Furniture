@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'https://furniture-production-4fc8.up.railway.app';
+  private apiUrl = 'https://furniture-production-6446.up.railway.app';
   constructor(private http: HttpClient) {}
 
   register(userData: {

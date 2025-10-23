@@ -29,7 +29,7 @@ export class ProductsForAdminComponent implements OnInit {
     console.log('Fetching products...', url);
     // Use the provided URL or default to the initial endpoint
     let fetchUrl =
-      url || 'https://furniture-production-4fc8.up.railway.app/products/'; // Replace with your default URL
+      url || 'https://furniture-production-6446.up.railway.app/products/'; // Replace with your default URL
 
     if (fetchUrl.startsWith('http://')) {
       fetchUrl = fetchUrl.replace('http://', 'https://');

@@ -15,6 +15,7 @@ import { CreateProductComponent } from './Pages/create-product/create-product.co
 
 import { authGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';
+import { ProductResolver } from './Resolver/ProductResolver';
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'product/:id', component: ProductDetailsComponent,canActivate:[authGuard] },
+  { path: 'product/:id', component: ProductDetailsComponent,canActivate:[authGuard],resolve:{product:ProductResolver} },
   { path: 'create-product', component: CreateProductComponent,canActivate:[authGuard,adminGuard] },
   { path: 'update-product/:id', component: UpdateProductComponent,canActivate:[authGuard,adminGuard] },
   { path: 'products-for-admin', component: ProductsForAdminComponent,canActivate:[authGuard,adminGuard] },

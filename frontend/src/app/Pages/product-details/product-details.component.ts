@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductsService } from 'src/app/Services/products.service';
+// import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
     selector: 'app-product-details',
@@ -15,29 +15,31 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productsService: ProductsService
+    // private productsService: ProductsService
   ) { }
 
   ngOnInit(): void {
     // Fetch the product ID from the route parameters
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
-      if (id) {
-        this.productId = +id; // Convert to number
-        this.fetchProductDetails(this.productId);
-      }
-    });
+    // this.route.paramMap.subscribe(params => {
+    //   const id = params.get('id');
+    //   if (id) {
+    //     this.productId = +id; // Convert to number
+    //     this.fetchProductDetails(this.productId);
+    //   }
+    // });
+    this.product=this.route.snapshot.data['product'];
+    console.log(this.product);
   }
 
-  fetchProductDetails(id: number): void {
-    this.productsService.getProductDetails(id).subscribe({
-      next: (response) => {
-        console.log('Product details:', response);
-        this.product = response;
-      },
-      error: (error) => {
-        console.error('Error fetching product details:', error);
-      }
-    });
-  }
+  // fetchProductDetails(id: number): void {
+  //   this.productsService.getProductDetails(id).subscribe({
+  //     next: (response) => {
+  //       console.log('Product details:', response);
+  //       this.product = response;
+  //     },
+  //     error: (error) => {
+  //       console.error('Error fetching product details:', error);
+  //     }
+  //   });
+  // }
 }
