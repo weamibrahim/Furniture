@@ -14,14 +14,14 @@ export class ProductsService {
 
   getProduct(id: number): Observable<any> {
     return this.http.get(
-      `https://furniture-production-6446.up.railway.app/products/${id}`
+      `https://furniture-production-9842.up.railway.app/products/${id}`
     );
   }
 
   getProductDetails(id: number): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(
-      `https://furniture-production-6446.up.railway.app/products/${id}/`,
+      `https://furniture-production-9842.up.railway.app/products/${id}/`,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export class ProductsService {
   deleteProduct(id: number): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.delete(
-      `https://furniture-production-6446.up.railway.app/products/delete/${id}/`,
+      `https://furniture-production-9842.up.railway.app/products/delete/${id}/`,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export class ProductsService {
   updateProduct(id: number, formData: FormData): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.put(
-      `https://furniture-production-6446.up.railway.app/products/update/${id}/`,
+      `https://furniture-production-9842.up.railway.app/products/update/${id}/`,
       formData,
       {
         headers: {
@@ -58,7 +58,7 @@ export class ProductsService {
   createProduct(formData: FormData): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.post(
-      `https://furniture-production-6446.up.railway.app/products/create/`,
+      `https://furniture-production-9842.up.railway.app/products/create/`,
       formData,
       {
         headers: {
@@ -70,13 +70,13 @@ export class ProductsService {
 
   searchByName(name: string): Observable<any> {
     return this.http.get(
-      `https://furniture-production-6446.up.railway.app/productsByName/?name=${name}`
+      `https://furniture-production-9842.up.railway.app/productsByName/?name=${name}`
     );
   }
 
   searchByCategory(category: string): Observable<any> {
     return this.http.get(
-      `https://furniture-production-6446.up.railway.app/productsByCategory/?category=${category}`
+      `https://furniture-production-9842.up.railway.app/productsByCategory/?category=${category}`
     );
   }
 }
